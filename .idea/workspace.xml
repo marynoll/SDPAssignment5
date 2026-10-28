@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21d8abe1-2298-40fc-af7e-67081cc5d410" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/FastestRouteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/FastestRouteStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/CheapestRouteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/CheapestRouteStrategy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
