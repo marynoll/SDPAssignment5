@@ -7,7 +7,7 @@
     <list default="true" id="21d8abe1-2298-40fc-af7e-67081cc5d410" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/delivery/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/RoutePlanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/RoutePlanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/StrategySelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/StrategySelector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +46,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.delivery-route-engine [compile].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",

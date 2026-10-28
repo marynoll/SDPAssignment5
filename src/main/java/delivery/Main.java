@@ -26,5 +26,16 @@ public class Main {
         System.out.println(planner.plan(routes, requestA).explain());
         planner.setStrategy(balanced);
         System.out.println(planner.plan(routes, requestA).explain());
+        System.out.println("=== 2. AUTOMATIC STRATEGY SELECTION ===");
+        StrategySelector selector = new StrategySelector(balanced)
+                .addRule(r -> r.priority() == DeliveryPriority.URGENT, fastest)
+                .addRule(r -> r.priority() == DeliveryPriority.ECONOMY, cheapest)
+                .addRule(r -> r.priority() == DeliveryPriority.ECO, eco);
+        for (DeliveryRequest request : List.of(requestA, requestB, requestC, requestD)) {
+            planner.setStrategy(selector.select(request));
+            System.out.println("Request #" + request.id() + " (" + request.priority() + ")");
+            System.out.println(planner.plan(routes, request).explain());
+        }
     }
+
 }
