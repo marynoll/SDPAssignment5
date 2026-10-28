@@ -17,6 +17,7 @@ public class Main {
         DeliveryRequest requestB = new DeliveryRequest(102, DeliveryPriority.ECONOMY, 4000, 120, false);
         DeliveryRequest requestC = new DeliveryRequest(103, DeliveryPriority.ECO, 10000, 120, true);
         DeliveryRequest requestD = new DeliveryRequest(104, DeliveryPriority.STANDARD, 10000, 120, false);
+        DeliveryRequest requestE = new DeliveryRequest(107, DeliveryPriority.SHORT_DISTANCE, 10000, 120, false);
 
         System.out.println("=== 1. RUNTIME STRATEGY SWITCHING (same planner, request #101) ===");
         RoutePlanner planner = new RoutePlanner(fastest);
@@ -31,14 +32,15 @@ public class Main {
         StrategySelector selector = new StrategySelector(balanced)
                 .addRule(r -> r.priority() == DeliveryPriority.URGENT, fastest)
                 .addRule(r -> r.priority() == DeliveryPriority.ECONOMY, cheapest)
-                .addRule(r -> r.priority() == DeliveryPriority.ECO, eco);
-        for (DeliveryRequest request : List.of(requestA, requestB, requestC, requestD)) {
+                .addRule(r -> r.priority() == DeliveryPriority.ECO, eco)
+                .addRule(r -> r.priority() == DeliveryPriority.SHORT_DISTANCE, new DistanceFirstStrategy());
+        for (DeliveryRequest request : List.of(requestA, requestB, requestC, requestD, requestE)) {
             planner.setStrategy(selector.select(request));
             System.out.println("Request #" + request.id() + " (" + request.priority() + ")");
             System.out.println(planner.plan(routes, request).explain());
             System.out.println("=== 3. STRATEGY COMPARISON MODE ===");
             DeliveryRequest request105 = new DeliveryRequest(105, DeliveryPriority.STANDARD, 7000, 90, false);
-            List<RouteStrategy> all = List.of(fastest, cheapest, eco, balanced);
+            List<RouteStrategy> all = List.of(fastest, cheapest, eco, balanced, new DistanceFirstStrategy());
             Map<String, RouteDecision> results = new StrategyComparator().compareAll(all, routes, request105);
             System.out.println("DELIVERY REQUEST #" + request105.id());
             for (RouteStrategy strategy : all) {
@@ -53,7 +55,6 @@ public class Main {
                 }
             }
 
-            // 4. Failure scenarios
             System.out.println();
             System.out.println("=== 4. FAILURE SCENARIOS ===");
             try {

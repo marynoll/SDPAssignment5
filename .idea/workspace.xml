@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21d8abe1-2298-40fc-af7e-67081cc5d410" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/delivery/StrategyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/delivery/StrategyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/DeliveryPriority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/DeliveryPriority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/DistanceFirstStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/DistanceFirstStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +47,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.StrategyTest.executor": "Run",
     "Maven.delivery-route-engine [compile].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
