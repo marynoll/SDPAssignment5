@@ -1,4 +1,5 @@
 package delivery;
 
-public class DeliveryPriority {
+public enum DeliveryPriority {
+    URGENT, ECONOMY, ECO, STANDARD
 }
