@@ -167,4 +167,18 @@ class StrategyTest {
         assertEquals(3, results.size());
         assertNotEquals(results.get("Fastest").route().id(), results.get("Cheapest").route().id());
     }
+    @Test
+    void distanceFirstPicksShortestRoute() {
+        assertEquals("R6", new DistanceFirstStrategy().selectRoute(routes, standard).route().id());
+    }
+
+    @Test
+    void selectorUsesNewStrategyWithoutChangingPlanner() {
+        RouteStrategy distanceFirst = new DistanceFirstStrategy();
+        StrategySelector selector = new StrategySelector(new FastestRouteStrategy())
+                .addRule(r -> r.priority() == DeliveryPriority.SHORT_DISTANCE, distanceFirst);
+        DeliveryRequest shortRequest = new DeliveryRequest(7, DeliveryPriority.SHORT_DISTANCE, 10000, 120, false);
+        RoutePlanner planner = new RoutePlanner(selector.select(shortRequest));
+        assertEquals("R6", planner.plan(routes, shortRequest).route().id());
+    }
 }
