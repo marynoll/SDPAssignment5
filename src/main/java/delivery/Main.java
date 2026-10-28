@@ -1,6 +1,7 @@
 package delivery;
 
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -35,7 +36,42 @@ public class Main {
             planner.setStrategy(selector.select(request));
             System.out.println("Request #" + request.id() + " (" + request.priority() + ")");
             System.out.println(planner.plan(routes, request).explain());
+            System.out.println("=== 3. STRATEGY COMPARISON MODE ===");
+            DeliveryRequest request105 = new DeliveryRequest(105, DeliveryPriority.STANDARD, 7000, 90, false);
+            List<RouteStrategy> all = List.of(fastest, cheapest, eco, balanced);
+            Map<String, RouteDecision> results = new StrategyComparator().compareAll(all, routes, request105);
+            System.out.println("DELIVERY REQUEST #" + request105.id());
+            for (RouteStrategy strategy : all) {
+                RouteDecision d = results.get(strategy.getStrategyName());
+                System.out.println(strategy.getStrategyName() + " Strategy:");
+                if (d == null) {
+                    System.out.println("  no suitable route");
+                } else {
+                    System.out.printf("  Route %s | Time: %d min | Cost: %.0f | CO2: %.1f kg | Score: %.2f%n",
+                            d.route().id(), d.route().effectiveMinutes(), d.route().cost(),
+                            d.route().carbonEmission(), d.score());
+                }
+            }
+
+            // 4. Failure scenarios
+            System.out.println();
+            System.out.println("=== 4. FAILURE SCENARIOS ===");
+            try {
+                planner.setStrategy(fastest);
+                planner.plan(List.of(), requestA);
+            } catch (NoSuitableRouteException e) {
+                System.out.println("Empty list -> " + e.getMessage());
+            }
+            try {
+                planner.plan(routes, new DeliveryRequest(106, DeliveryPriority.URGENT, 100, 5, false));
+            } catch (NoSuitableRouteException e) {
+                System.out.println("Impossible request -> " + e.getMessage());
+            }
+            try {
+                new BalancedRouteStrategy(0.5, 0.5, 0.5, 0.5);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Bad weights -> " + e.getMessage());
+            }
         }
     }
-
 }
