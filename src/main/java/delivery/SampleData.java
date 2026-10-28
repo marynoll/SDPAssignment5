@@ -14,13 +14,13 @@ public class SampleData {
 
     public static List<Route> routes() {
         return List.of(
-                route("R1", 18, 25, 5200, 3.9, 8, true),   // highway express
-                route("R2", 14, 30, 3400, 2.0, 6, true),   // city center
-                route("R3", 22, 30, 4500, 4.1, 4, true),   // ring road
-                route("R4", 16, 50, 3000, 0.9, 2, true),   // green corridor
-                route("R5", 15, 45, 2400, 2.5, 5, true),   // back streets
-                route("R6", 12, 28, 4000, 2.8, 20, true),  // bridge shortcut, heavy traffic
-                route("R7", 20, 20, 3500, 4.5, 0, false),  // night route, unavailable
-                route("R8", 30, 60, 2200, 5.0, 0, true));  // scenic long route
+                route("R1", 18, 25, 5200, 3.9, 8, true),
+                route("R2", 14, 30, 3400, 2.0, 6, true),
+                route("R3", 22, 30, 4500, 4.1, 4, true),
+                route("R4", 16, 50, 3000, 0.9, 2, true),
+                route("R5", 15, 45, 2400, 2.5, 5, true),
+                route("R6", 12, 28, 4000, 2.8, 20, true),
+                route("R7", 20, 20, 3500, 4.5, 0, false),
+                route("R8", 30, 60, 2200, 5.0, 0, true));
     }
 }

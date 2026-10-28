@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="21d8abe1-2298-40fc-af7e-67081cc5d410" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/DeliveryPriority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/DeliveryPriority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/DeliveryRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/DeliveryRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/AbstractRouteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/AbstractRouteStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/NoSuitableRouteException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/NoSuitableRouteException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/RouteDecision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/RouteDecision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/delivery/RouteStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/RouteStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/delivery/SampleData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/delivery/SampleData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
